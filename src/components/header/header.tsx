@@ -7,7 +7,7 @@ export default function Header() {
       <header className="flex z-50 justify-center sticky top-0 w-full h-fit border-b border-opacity-40 bg-white bg-opacity-50 backdrop-blur-[0.5rem]">
          <nav className="w-1/2 flex justify-between items-center p-4">
             <div className='flex items-center gap-3'>
-               <VideoCameraIcon className='w-9' />
+               {/* <VideoCameraIcon className='w-9' /> */}
                <h1 className="uppercase font-bold text-xl">Net movie</h1>
             </div>
             <div className='flex items-center gap-10'>
