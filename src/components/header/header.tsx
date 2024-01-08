@@ -4,7 +4,7 @@ import { SunIcon } from '@heroicons/react/24/outline'
 
 export default function Header() {
    return (
-      <header className="flex justify-center fixed top-0 w-full h-fit border-b backdrop-blur-md">
+      <header className="flex z-50 justify-center sticky top-0 w-full h-fit border-b border-opacity-40 bg-white bg-opacity-50 backdrop-blur-[0.5rem]">
          <nav className="w-1/2 flex justify-between items-center p-4">
             <div className='flex items-center gap-3'>
                <VideoCameraIcon className='w-9' />
