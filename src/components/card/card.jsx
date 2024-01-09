@@ -3,10 +3,10 @@ import Image from 'next/image'
 
 export default function Card ({movie}) {
    return (
-      <div className="scale-90 lg:scale-100" key = {movie.id}>
+      <div className="scale-90 lg:scale-100">
          <Image
             src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-            alt="image poster"
+            alt={`${movie.title} poster`}
             width = {500}
             height = {500}
             className="w-44 h-44 mb-3 rounded-lg"
