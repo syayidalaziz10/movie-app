@@ -33,7 +33,7 @@ export default function Main() {
                </form>
             </div>
          </div>
-         <div className="w-full flex flex-wrap justify-start items-center gap-y-2 gap-x-3">
+         <div className="w-full flex flex-wrap justify-start items-center lg:gap-3">
             <div className="flex flex-col items-center gap-3 scale-90 lg:scale-100">
                <Image
                   src={BannerImage}
