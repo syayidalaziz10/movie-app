@@ -21,11 +21,6 @@ export default function Header() {
                      placeholder="Search movies ... "
                   />
                </div>
-               <div className='flex justify-center items-center'>
-                  <button>
-                     <SunIcon className='w-6 text-gray-400' />
-                  </button>
-               </div>
             </div>
          </nav>
       </header>
