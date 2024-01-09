@@ -12,7 +12,7 @@ export default function Main() {
                alt="Fav movie banner"
                className="w-full rounded-2xl brightness-50 block"
             />
-            <div className='absolute inset-y-0 start-0 flex items-center p-10 pointer-events-none'>
+            <div className='absolute inset-y-0 start-0 flex items-center lg:p-10 p-5 pointer-events-none'>
                <div className="flex justify-start flex-col gap-2 text-left">
                   <h3 className="text-white md:text-base text-xs">Action, Comedy</h3>
                   <h1 className="md:text-3xl text-lg text-white">The Hunger Games: The Ballad of Songbirds & Snakes</h1>
