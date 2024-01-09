@@ -22,7 +22,7 @@ export default function Main() {
                </div>
             </div>
          </div>
-         <div className="w-full h-fit">
+         <div className="w-full h-fit p-1 lg:p-0">
             <div className="flex items-center justify-between">
                <h1 className="text-left font-semibold md:text-3xl text-xl text-black">Discover Movies</h1>
                <form action="">
