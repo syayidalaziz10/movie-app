@@ -1,10 +1,13 @@
 import Image from "next/image"
 import { SunIcon } from '@heroicons/react/24/outline'
-import { StarIcon } from '@heroicons/react/24/solid'
 import BannerImage from './banner.jpg'
+import { getTrendingMovies } from "../../../configs/request"
+import Card from "@/components/card/card"
 
 
-export default function Main() {
+export default async function Main() {
+   const movies = await getTrendingMovies();
+
    return (
       <main className="flex flex-col justify-center items-center p-2 my-10 lg:w-1/2 h-fit gap-10">
          <div className="w-full relative">
@@ -16,9 +19,8 @@ export default function Main() {
             <div className='absolute inset-y-0 start-0 flex items-center lg:p-10 p-5 pointer-events-none'>
                <div className="flex justify-start flex-col gap-2 text-left">
                   <h3 className="text-white md:text-base text-xs">Action, Comedy</h3>
-                  <h1 className="md:text-3xl text-lg text-white">The Hunger Games: The Ballad of Songbirds & Snakes</h1>
-                  <p className="text-white/[0.6] text-xs md:text-base">64 years before he becomes the tyrannical president of Panem, Coriolanus Snow sees a chance for a change in fortunes when he mentors Lucy Gray Baird, the female tribute from District 12. </p>
-                  {/* <button className="px-4 py-1 text-center text-white text-sm bg-white bg-opacity-40 backdrop-blur-sm w-fit h-10 rounded-full">Visit here</button> */}
+                  <h1 className="md:text-3xl text-xl text-white">The Hunger Games: The Ballad of Songbirds & Snakes</h1>
+                  <p className="text-white/[0.6] text-xs md:text-base hidden md:block">64 years before he becomes the tyrannical president of Panem, Coriolanus Snow sees a chance for a change in fortunes when he mentors Lucy Gray Baird, the female tribute from District 12. </p>
                </div>
             </div>
          </div>
@@ -34,61 +36,10 @@ export default function Main() {
                </form>
             </div>
          </div>
-         <div className="w-full flex flex-wrap justify-start items-center lg:gap-3">
-            <div className="flex flex-col items-center gap-3 scale-90 lg:scale-100">
-               <Image
-                  src={BannerImage}
-                  object-fit="cover"
-                  alt="Fav movie banner"
-                  className="w-44 h-44 rounded-lg"
-               />
-               <div className="w-44 h-fit text-center md:text-base text-sm tracking-tight leading-normal text-clip font-semibold text-black/[0.8]">Hunger Games</div>
-            </div>
-            <div className="flex flex-col items-center gap-3 scale-90 lg:scale-100">
-               <Image
-                  src={BannerImage}
-                  object-fit="cover"
-                  alt="Fav movie banner"
-                  className="w-44 h-44 rounded-lg"
-               />
-               <div className="w-44 h-fit text-center md:text-base text-sm tracking-tight leading-normal text-clip font-semibold text-black/[0.8]">Hunger Games</div>
-            </div>
-            <div className="flex flex-col items-center gap-3 scale-90 lg:scale-100">
-               <Image
-                  src={BannerImage}
-                  object-fit="cover"
-                  alt="Fav movie banner"
-                  className="w-44 h-44 rounded-lg"
-               />
-               <div className="w-44 h-fit text-center md:text-base text-sm tracking-tight leading-normal text-clip font-semibold text-black/[0.8]">Hunger Games</div>
-            </div>
-            <div className="flex flex-col items-center gap-3 scale-90 lg:scale-100">
-               <Image
-                  src={BannerImage}
-                  object-fit="cover"
-                  alt="Fav movie banner"
-                  className="w-44 h-44 rounded-lg"
-               />
-               <div className="w-44 h-fit text-center md:text-base text-sm tracking-tight leading-normal text-clip font-semibold text-black/[0.8]">Hunger Games</div>
-            </div>
-            <div className="flex flex-col items-center gap-3 scale-90 lg:scale-100">
-               <Image
-                  src={BannerImage}
-                  object-fit="cover"
-                  alt="Fav movie banner"
-                  className="w-44 h-44 rounded-lg"
-               />
-               <div className="w-44 h-fit text-center md:text-base text-sm tracking-tight leading-normal text-clip font-semibold text-black/[0.8]">Hunger Games</div>
-            </div>
-            <div className="flex flex-col items-center gap-3 scale-90 lg:scale-100">
-               <Image
-                  src={BannerImage}
-                  object-fit="cover"
-                  alt="Fav movie banner"
-                  className="w-44 h-44 rounded-lg"
-               />
-               <div className="w-44 h-fit text-center md:text-base text-sm tracking-tight leading-normal text-clip font-semibold text-black/[0.8]">Hunger Games</div>
-            </div>
+         <div className="w-full flex flex-wrap justify-start items-start lg:gap-3">
+            {movies.map(movie => {
+               return <Card movie={movie}></Card>
+            })}
          </div>
          <button className="fixed bottom-5 right-5 bg-white w-[3rem] h-[3rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all">
             <SunIcon className='w-5 text-black/[0.7]' />
