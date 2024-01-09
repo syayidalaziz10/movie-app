@@ -7,6 +7,11 @@ import Card from "@/components/card/card"
 
 export default async function Main() {
    const movies = await getTrendingMovies();
+   interface Movie {
+      id: number;
+      title: string;
+      // Tambahkan properti lainnya sesuai kebutuhan
+   }
 
    return (
       <main className="flex flex-col justify-center items-center p-2 my-10 lg:w-1/2 h-fit gap-10">
@@ -37,8 +42,8 @@ export default async function Main() {
             </div>
          </div>
          <div className="w-full flex flex-wrap justify-start items-start lg:gap-3">
-            {movies.map(movie => {
-               return <Card movie={movie} key={movie.id}></Card>
+            {movies.map((movie: Movie) => {
+               return <Card movie={movie} key={movie.id} />
             })}
          </div>
          <button className="fixed bottom-5 right-5 bg-white w-[3rem] h-[3rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all">
