@@ -34,7 +34,7 @@ export default function Main() {
             </div>
          </div>
          <div className="w-full flex flex-wrap justify-start items-center gap-y-2 gap-x-3">
-            <div className="flex flex-col items-center gap-3 scale-95 lg:scale-100">
+            <div className="flex flex-col items-center gap-3 scale-90 lg:scale-100">
                <Image
                   src={BannerImage}
                   object-fit="cover"
@@ -43,7 +43,7 @@ export default function Main() {
                />
                <div className="w-44 h-fit text-center md:text-base text-sm tracking-tight leading-normal text-clip font-semibold text-black/[0.8]">Hunger Games</div>
             </div>
-            <div className="flex flex-col items-center gap-3 scale-95 lg:scale-100">
+            <div className="flex flex-col items-center gap-3 scale-90 lg:scale-100">
                <Image
                   src={BannerImage}
                   object-fit="cover"
@@ -52,7 +52,7 @@ export default function Main() {
                />
                <div className="w-44 h-fit text-center md:text-base text-sm tracking-tight leading-normal text-clip font-semibold text-black/[0.8]">Hunger Games</div>
             </div>
-            <div className="flex flex-col items-center gap-3 scale-95 lg:scale-100">
+            <div className="flex flex-col items-center gap-3 scale-90 lg:scale-100">
                <Image
                   src={BannerImage}
                   object-fit="cover"
@@ -61,7 +61,7 @@ export default function Main() {
                />
                <div className="w-44 h-fit text-center md:text-base text-sm tracking-tight leading-normal text-clip font-semibold text-black/[0.8]">Hunger Games</div>
             </div>
-            <div className="flex flex-col items-center gap-3 scale-95 lg:scale-100">
+            <div className="flex flex-col items-center gap-3 scale-90 lg:scale-100">
                <Image
                   src={BannerImage}
                   object-fit="cover"
@@ -70,7 +70,7 @@ export default function Main() {
                />
                <div className="w-44 h-fit text-center md:text-base text-sm tracking-tight leading-normal text-clip font-semibold text-black/[0.8]">Hunger Games</div>
             </div>
-            <div className="flex flex-col items-center gap-3 scale-95 lg:scale-100">
+            <div className="flex flex-col items-center gap-3 scale-90 lg:scale-100">
                <Image
                   src={BannerImage}
                   object-fit="cover"
@@ -79,7 +79,7 @@ export default function Main() {
                />
                <div className="w-44 h-fit text-center md:text-base text-sm tracking-tight leading-normal text-clip font-semibold text-black/[0.8]">Hunger Games</div>
             </div>
-            <div className="flex flex-col items-center gap-3 scale-95 lg:scale-100">
+            <div className="flex flex-col items-center gap-3 scale-90 lg:scale-100">
                <Image
                   src={BannerImage}
                   object-fit="cover"
