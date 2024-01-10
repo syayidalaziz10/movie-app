@@ -1,8 +1,7 @@
-import Image from "next/image"
 import { SunIcon } from '@heroicons/react/24/outline'
-import BannerImage from './banner.jpg'
 import { getTrendingMovies } from "../../../configs/request"
 import Card from "@/components/card/card"
+import Carousel from "@/components/carousel/carousel"
 
 
 export default async function Main() {
@@ -10,26 +9,14 @@ export default async function Main() {
    interface Movie {
       id: number;
       title: string;
-      // Tambahkan properti lainnya sesuai kebutuhan
    }
 
    return (
-      <main className="flex flex-col justify-center items-center p-2 my-10 lg:w-1/2 h-fit gap-10">
-         <div className="w-full relative">
-            <Image
-               src={BannerImage}
-               alt="Fav movie banner"
-               className="w-full rounded-2xl brightness-50 block"
-            />
-            <div className='absolute inset-y-0 start-0 flex items-center lg:p-10 p-5 pointer-events-none'>
-               <div className="flex justify-start flex-col gap-2 text-left">
-                  <h3 className="text-white md:text-base text-xs">Action, Comedy</h3>
-                  <h1 className="md:text-3xl text-xl text-white">The Hunger Games: The Ballad of Songbirds & Snakes</h1>
-                  <p className="text-white/[0.6] text-xs md:text-base hidden md:block">64 years before he becomes the tyrannical president of Panem, Coriolanus Snow sees a chance for a change in fortunes when he mentors Lucy Gray Baird, the female tribute from District 12. </p>
-               </div>
-            </div>
+      <main className="flex flex-col justify-center items-center p-2 my-10 lg:w-1/2 w-full h-fit gap-10">
+         <div>
+            <Carousel />
          </div>
-         <div className="w-full h-fit p-1 lg:p-0">
+         <div className="w-full h-fit p-2 lg:p-0">
             <div className="flex items-center justify-between">
                <h1 className="text-left font-semibold md:text-3xl text-xl text-black">Discover Movies</h1>
                <form action="">
@@ -41,7 +28,7 @@ export default async function Main() {
                </form>
             </div>
          </div>
-         <div className="w-full flex flex-wrap justify-start items-start lg:gap-3">
+         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-8">
             {movies.map((movie: Movie) => {
                return <Card movie={movie} key={movie.id} />
             })}
