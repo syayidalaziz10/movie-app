@@ -17,6 +17,7 @@ export default function Header() {
                   </div>
                   <input
                      type="text"
+                     name='search'
                      className="block ps-10 py-5 px-2 h-8 outline-none bg-gray-100 text-gray-400 md:text-sm text-xs rounded-md"
                      placeholder="Search movies ... "
                   />

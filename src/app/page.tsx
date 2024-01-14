@@ -1,21 +1,19 @@
-import Header from "@/components/header"
-import { SunIcon } from '@heroicons/react/24/outline'
-import { getTrendingMovies } from "../../configs/request"
+import { getTrendingMovies } from "@/configs/request"
 import Card from "@/components/card"
 import Carousel from "@/components/carousel"
+import ThemeSwitcher from "@/components/theme-switcher"
 
 export default async function Home() {
 
   const movies = await getTrendingMovies();
   interface Movie {
-    id: number;
-    title: string;
-  }
+    id: number,
 
+  }
   return (
     <main className="flex flex-col justify-center items-center p-2 my-10 lg:w-1/2 w-full h-fit gap-10">
-      <div>
-        <Carousel />
+      <div className="w-full h-[200px] md:h-[300px] lg:h-[430px]">
+        <Carousel movies={movies} />
       </div>
       <div className="w-full h-fit p-2 lg:p-0">
         <div className="flex items-center justify-between">
@@ -34,9 +32,7 @@ export default async function Home() {
           return <Card movie={movie} key={movie.id} />
         })}
       </div>
-      <button className="fixed bottom-5 right-5 bg-white w-[3rem] h-[3rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all">
-        <SunIcon className='w-5 text-black/[0.7]' />
-      </button>
+      <ThemeSwitcher />
     </main>
   )
 }
