@@ -29,7 +29,7 @@ export default function Carousel ({movies}) {
                disableOnInteraction: false
             }}
             modules={[Autoplay, EffectCreative]}
-            className="mySwiper w-full h-full transition"
+            className="mySwiper w-full h-full"
          >
             {movies.map((movie) => (
                <SwiperSlide className='w-full rounded-2xl' key={movie.id}>
@@ -40,10 +40,10 @@ export default function Carousel ({movies}) {
                      unoptimized
                      className="w-full brightness-50 block"
                   />
-                  <div className='absolute inset-y-0 start-0 flex items-center lg:p-10 p-5 pointer-events-none'>
+                  <div className='absolute inset-y-0 start-0 flex lg:items-center items-end pb-10 lg:p-10 p-5 pointer-events-none'>
                      <div className="flex justify-start flex-col gap-2 text-left">
                         <h1 className="md:text-3xl font-semibold text-xl text-white">{movie.original_title}</h1>
-                        <p className="text-white/[0.6] text-xs md:text-base hidden md:block">{movie.overview}</p>
+                        <p className="text-white/[0.6] text-xs md:text-base hidden lg:block">{movie.overview}</p>
                      </div>
                   </div>
                </SwiperSlide>
